@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Until Sunset</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="login-screen" class="screen">
+
+        <div class="login-card">
+
+            <div class="moon">🌙</div>
+
+            <h1>Until Sunset</h1>
+
+            <p class="subtitle">
+                Здесь тебя ждёт кое-что особенное
+            </p>
+
+            <input
+                type="text"
+                id="login"
+                placeholder="Логин"
+                autocomplete="off"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Пароль"
+            >
+
+            <button id="login-button">
+                Открыть подарок
+            </button>
+
+            <p id="error-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <div id="gift-screen" class="screen hidden">
+
+        <div class="stars"></div>
+
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+
+        <main class="gift-content">
+
+            <p class="small-text">
+                Для тебя 🌅
+            </p>
+
+            <h1>
+                С днём рождения!
+            </h1>
+
+            <p class="description">
+                Иногда одна песня может сказать
+                намного больше, чем тысячи слов.
+            </p>
+
+            <div class="player">
+
+                <button id="play-button" aria-label="Воспроизвести">
+                    ▶️
+                </button>
+
+                <div class="track-info">
+                    <span id="current-time">00:00</span>
+
+                    <div class="progress-container" id="progress-container">
+                        <div id="progress-bar"></div>
+                    </div>
+
+                    <span id="duration">00:00</span>
+                </div>
+
+            </div>
+
+            <p id="final-message" class="final-message">
+                Этот маленький уголок всегда будет ждать тебя 🤍
+            </p>
+
+        </main>
+
+    </div>
+
+
+    <audio id="song" preload="metadata">
+        <source src="music/song.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

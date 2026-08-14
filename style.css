@@ -1,0 +1,430 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(180, 120, 210, 0.25), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(255, 190, 210, 0.18), transparent 35%),
+        linear-gradient(135deg, #171126, #302044 50%, #171126);
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+}
+
+
+/* ===== Общий экран ===== */
+
+#login-screen,
+#gift-screen {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+/* ===== Скрытие элементов ===== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ===== Карточка входа ===== */
+
+.login-card {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    animation: appear 1s ease;
+}
+
+
+/* ===== Заголовок ===== */
+
+.login-card h1 {
+    margin: 0 0 15px;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+
+    color: #fff;
+}
+
+.login-card p {
+    margin: 0 0 28px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    opacity: 0.85;
+}
+
+
+/* ===== Поля ввода ===== */
+
+.login-card input {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+.login-card input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.login-card input:focus {
+    border-color: rgba(255, 210, 230, 0.8);
+
+    background: rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 0 20px rgba(255, 190, 220, 0.15);
+}
+
+
+/* ===== Кнопка ===== */
+
+#login-button {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #d9a7c7,
+        #b58ac7
+    );
+
+    color: #24172c;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#login-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ===== Сообщение об ошибке ===== */
+
+#error-message {
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    color: #ffc7d8;
+
+    font-size: 14px;
+}
+
+
+/* ===== Экран подарка ===== */
+
+#gift-screen {
+    display: flex;
+
+    text-align: center;
+}
+
+.gift-card {
+    width: 100%;
+    max-width: 700px;
+
+    padding: 50px 40px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    animation: appear 1s ease;
+}
+
+
+/* ===== Поздравление ===== */
+
+.gift-card h1 {
+    margin: 0 0 18px;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    color: #fff;
+}
+
+.gift-card p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    opacity: 0.88;
+}
+
+
+/* ===== Музыкальный блок ===== */
+
+.music-player {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===== Кнопка Play ===== */
+
+#play-button {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    background: rgba(255, 255, 255, 0.13);
+
+    color: #fff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+#play-button:hover {
+    transform: scale(1.08);
+
+    background: rgba(255, 255, 255, 0.22);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ===== Информация о времени ===== */
+
+.track-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    opacity: 0.75;
+}
+
+
+/* ===== Полоска песни ===== */
+
+#progress-container {
+    flex: 1;
+
+    height: 6px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #e8b4d8,
+        #f5d5e5
+    );
+
+    transition: width 0.1s linear;
+}
+
+
+/* ===== Финальная надпись ===== */
+
+#final-message {
+    margin-top: 30px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+#final-message.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ===== Маленькая надпись ===== */
+
+.small-note {
+    margin-top: 28px;
+
+    font-size: 13px;
+
+    opacity: 0.5;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ===== Анимация появления ===== */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ===== Телефон ===== */
+
+@media (max-width: 600px) {
+
+    #login-screen,
+    #gift-screen {
+        padding: 15px;
+    }
+
+    .login-card,
+    .gift-card {
+        padding: 35px 22px;
+
+        border-radius: 24px;
+    }
+
+    .login-card h1,
+    .gift-card h1 {
+        font-size: 36px;
+    }
+
+    .login-card p,
+    .gift-card p {
+        font-size: 16px;
+    }
+
+    #play-button {
+        width: 65px;
+        height: 65px;
+    }
+
+}
